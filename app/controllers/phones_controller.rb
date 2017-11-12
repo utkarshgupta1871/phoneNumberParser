@@ -11,11 +11,13 @@ class PhonesController < ApplicationController
   	if p.valid?
   		h[:country]=p.country.country_code
   		response<<h
+  		return render status:200, json: response
   	else
   		h[:errorMessage]="Invalid Phone number"
   		response<<h
+  		return render status:400, json: response
   	end
-  	return render json: response
+  	
   end
 
   def api
@@ -25,11 +27,13 @@ class PhonesController < ApplicationController
   	if p.valid?
   		h[:country]=p.country.country_code
   		response<<h
+  		return render status:200, json: response
   	else
   		h[:errorMessage]="Invalid Phone number"
   		response<<h
+  		return render status:400, json: response
   	end
-  	return render json: response
+
   end
 
   private
