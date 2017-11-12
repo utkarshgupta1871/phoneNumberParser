@@ -1,0 +1,13 @@
+<h1>Phones Number Parser</h1>
+<% phone_object = TelephoneNumber.parse("+918882133266")%>
+<p>The country code for '+918882133266' is <%= phone_object.country.country_code%> </p>
+
+<%= form_for @p do |f| %>
+<div style="text-align: center;width: 100vw;"> <%= f.label :number, 'Phone Number:' %>
+<br>
+
+<%= f.text_field :number, style: "width: 50vw;" %>
+	
+<br>
+<%= f.submit "Submit"%></div>
+<% end %>
